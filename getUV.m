@@ -1,7 +1,7 @@
 function [U, V] = getUV(S, X)
     n_iter = 10;
     % stopping criteria?
-    n = length(X{1});
+    n = length(X(:, :, 1));
     D = diag(sum(S));
     
     U = eye(n); % initial

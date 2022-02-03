@@ -8,19 +8,19 @@ function [X_train, y_train, X_test, y_test] = load_znamenke()
     [~, n] = size(azip);
     [~, m] = size(testzip);
     
-    X_train = {};
-    y_train = {};
-    X_test = {};
-    y_test = {};
+    X_train = zeros(16, 16, n);
+    y_train = dzip;
+    X_test = zeros(16, 16, m);
+    y_test = dtest;
     
     for i = 1:n
-        X_train{i} = reshape(azip(:, i), 16, 16);
-        y_train{i} = dzip(:, i);
+        X_train(:, :, i) = reshape(azip(:, i), 16, 16);
+        % y_train{i} = dzip(:, i);
     end
     
     for i = 1:m
-        X_test{i} = reshape(testzip(:, i), 16, 16);
-        y_test{i} = dtest(:, i);
+        X_test(:, :, i) = reshape(testzip(:, i), 16, 16);
+        % y_test{i} = dtest(:, i);
     end
     
 end
