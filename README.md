@@ -7,7 +7,7 @@
 
 
 TODO:
-1. Dobiti matricu <strong>S</strong> najbližih susjedstva
+1. Dobiti matricu <strong>S</strong> najbližih susjedstva ✅
 2. Funkcija za plotanje rezultata
 3. Napraviti dataset ili više njih
 4. Naći matlab fje za LLE, ncut MSC i slično
