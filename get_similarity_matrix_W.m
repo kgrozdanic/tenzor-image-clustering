@@ -1,10 +1,8 @@
 %% X = h * w * N matrica slika. vraca simetricnu matricu slicnosti W. na dijagonali 0!
-function [W] = get_similarity_matrix_W(X)
+function [W] = get_similarity_matrix_W(X, func)
     [h, w, N] = size(X);
     W = zeros(N);
-    
-    func = "corr";
-    
+        
     if func == "mse"
         X = reshape(X, [], N);
 
