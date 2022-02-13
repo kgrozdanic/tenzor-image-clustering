@@ -15,6 +15,11 @@ plot_results(X_train, y_train, U, V, 2, 1); % T(2, 1)
 
 TODO:
 1. Dobiti matricu <strong>S</strong> najbližih susjedstva ✅
-2. Funkcija za plotanje rezultata
-3. Napraviti dataset ili više njih
-4. Naći matlab fje za LLE, ncut MSC i slično
+2. Uvjeriti se da stvari rade kako treba ✅
+3. Funkcija za plotanje rezultata ✅
+4. Primijeniti kmeans na output transformacije prostora
+5. Napraviti dataset ili više njih
+6. Naći matlab fje za LLE, ncut MSC i slično
+
+
+http://www.cad.zju.edu.cn/home/dengcai/Data/DimensionReduction.html <- "TensorLPP"
