@@ -18,7 +18,7 @@ function [] = plot_results(X, y, U, V, k, m)
       
     for i = 1:n_cluster
         ind = find(y == i);
-        plot(xy(1, ind), xy(2, ind), 'linestyle', 'none', 'Marker', '.', 'MarkerSize', 9, 'Color', cmap(i, :))
+        plot(xy(1, ind), xy(2, ind), 'linestyle', 'none', 'Marker', '.', 'MarkerSize', 7, 'Color', cmap(i, :))
     end
     
     % ax1 = gca;

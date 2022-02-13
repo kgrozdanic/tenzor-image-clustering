@@ -23,4 +23,8 @@ function [X_train, y_train, X_test, y_test] = load_znamenke()
         % y_test{i} = dtest(:, i);
     end
     
+    [~, idx] = sort(y_train);
+    y_train = y_train(idx);
+    X_train = X_train(:, :, idx);
+    
 end

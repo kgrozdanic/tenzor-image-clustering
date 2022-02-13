@@ -3,6 +3,6 @@ function S = get_neighbour_matrix_S(W, k)
     S = maxk(W', k)'; % vraca matricu n x k, k najvecih elemenata u svakom retku (inace vraca za stupce, zato stavljam transponiranje)
     S = S(:, k); % k.-ti najveci element
     
-    S = ge(W, S); % less or equal, ako je veci ili jednak k-tom najvecem, onda upada u k najblizih susjeda (gledamo slicnost a ne udaljenost)
+    S = ge(W, S); % greater or equal, ako je veci ili jednak k-tom najvecem, onda upada u k najblizih susjeda (gledamo slicnost a ne udaljenost)
     S = S | S'; % simetrija
 end
