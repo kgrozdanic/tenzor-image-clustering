@@ -23,4 +23,6 @@ function [xy] = ApplyTensorImage(X, y, U, V, k, m)
             plot(reshaped_xy(1, ind), reshaped_xy(2, ind), 'linestyle', 'none', 'Marker', '.', 'MarkerSize', 7, 'Color', cmap(i, :))
         end
     end
+
+    xy = reshape(xy, [], N)';
 end
