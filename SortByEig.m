@@ -1,4 +1,4 @@
-function [A, eigvalue_A] = sort_by_eig(A, eigvalue_A)
+function [A, eigvalue_A] = SortByEig(A, eigvalue_A)
     eigvalue_A = diag(eigvalue_A);
     [~, index] = sort(-abs(eigvalue_A));
     A = A(:, index);

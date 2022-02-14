@@ -1,4 +1,4 @@
-function [S_] = getS_(S, idxs, X, V_Vt, is_U)
+function [S_] = GetS_(S, idxs, X, V_Vt, is_U)
     [nrow, ncol, N] = size(X);
     S_ = zeros(nrow, ncol);
     

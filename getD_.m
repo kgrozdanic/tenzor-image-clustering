@@ -1,4 +1,4 @@
-function [D_] = getD_(D, X, V_Vt, is_U)
+function [D_] = GetD_(D, X, V_Vt, is_U)
     [nrow, ncol, N] = size(X);
     
     D_ = zeros( nrow, ncol );

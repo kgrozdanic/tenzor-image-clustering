@@ -1,4 +1,4 @@
-function [X_train, y_train, X_test, y_test] = load_znamenke()
+function [X_train, y_train, X_test, y_test] = LoadZnamenke()
     
     load('data\znamenke\azip');
     load('data\znamenke\dzip');

@@ -1,5 +1,5 @@
 %% W = N * N matrica slika, k = # najblizih susjeda. vraca simetricnu matricu susjedstva S.
-function S = get_neighbour_matrix_S(W, k)
+function S = GetNeighbourMatrix_S(W, k)
     S = maxk(W', k)'; % vraca matricu n x k, k najvecih elemenata u svakom retku (inace vraca za stupce, zato stavljam transponiranje)
     S = S(:, k); % k.-ti najveci element
     
