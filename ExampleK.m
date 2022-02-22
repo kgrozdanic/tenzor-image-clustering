@@ -49,7 +49,3 @@ ApplyNormCut(W_corr_sigmoid, 10, y_train);
 
 disp('____UsedMatrix____')
 ApplyNormCut(UsedMatrix, 10, y_train);
-
-
-
-
