@@ -34,7 +34,7 @@ ApplyTensorImage(X_train, y_train, U, V, 1, 2);
 ApplyTensorImage(X_train, y_train, U, V, 2, 1);
 
 
-PlotAccuracy(X_train, y_train, U, V, 2, 7);
+PlotAccuracy(X_train, y_train, U, V, 2, 7, 10);
 
 % normalized cuts
 
@@ -49,3 +49,6 @@ ApplyNormCut(W_corr_sigmoid, 10, y_train);
 
 disp('____UsedMatrix____')
 ApplyNormCut(UsedMatrix, 10, y_train);
+
+
+PlotPCA(X_train, y_train)
