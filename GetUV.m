@@ -1,4 +1,5 @@
 function [U, V] = GetUV(S, X)
+
     % normalize S
     S = S - min(min(S));
     S = S / max(max(S));
@@ -15,7 +16,7 @@ function [U, V] = GetUV(S, X)
     [i_idx, j_idx, ~] = find(S);
     idxs = {};
     for i = 1:N
-       idxs{i} = j_idx(find(i_idx == i)); %hmm, je li ovo upitna linija?
+       idxs{i} = j_idx(find(i_idx == i)); 
     end
    
     mistakes = zeros(1, n_iter);
@@ -36,7 +37,6 @@ function [U, V] = GetUV(S, X)
         
     % [V, eigvalue_V] = SortByEig(V, eigvalue_V);
     % [U, eigvalue_U] = SortByEig(U, eigvalue_U);
-    
     
     
     figure;
