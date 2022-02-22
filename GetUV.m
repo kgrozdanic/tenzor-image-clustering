@@ -1,5 +1,5 @@
 function [U, V] = GetUV(S, X)
-    n_iter = 90;
+    n_iter = 30;
     % stopping criteria?
     [nrow, ncol, N] = size(X);
     D = sum(S, 2);
@@ -32,6 +32,6 @@ function [U, V] = GetUV(S, X)
     % [V, eigvalue_V] = SortByEig(V, eigvalue_V);
     % [U, eigvalue_U] = SortByEig(U, eigvalue_U);
     
-    plot(mistakes);
+    figure(); plot(mistakes);
     disp(mistakes(n_iter));
 end
