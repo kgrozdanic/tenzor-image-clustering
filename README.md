@@ -21,5 +21,11 @@ TODO:
 5. Napraviti dataset ili više njih
 6. Naći matlab fje za LLE, ncut MSC i slično
 
+Primjeri koje pokazujemo:
+1. imagesc(W)
+2. Padajući graf funkcije cilja
+3. Tensor space T2
+4. Accuracy
+
 
 http://www.cad.zju.edu.cn/home/dengcai/Data/DimensionReduction.html <- "TensorLPP"
