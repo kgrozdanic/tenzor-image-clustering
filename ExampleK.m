@@ -34,7 +34,7 @@ ApplyTensorImage(X_train, y_train, U, V, 1, 2);
 ApplyTensorImage(X_train, y_train, U, V, 2, 1);
 
 
-PlotAccuracy(X_train, y_train, U, V, 2, 7, 10);
+PlotAccuracy(X_train, y_train, U, V, 2, 16, 10);
 
 % normalized cuts
 
@@ -52,3 +52,6 @@ ApplyNormCut(UsedMatrix, 10, y_train);
 
 
 PlotPCA(X_train, y_train)
+
+% [U, V, ~, ~, ~, Y] = TensorLGE(X_train, UsedMatrix);
+% xy = ApplyTensorImage(X_train, y_train, U, V, 13, 13); idx = kmeans(xy, 10); [Acc, ~, ~] = AccMeasure(y_train, idx)

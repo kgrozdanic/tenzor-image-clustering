@@ -15,4 +15,6 @@ function PlotPCA(X, y)
     
     PlotClusters(xy, y);
     title('PCA')
+    xlabel('Prva diskriminacijska koordinata')
+    ylabel('Druga diskriminacijska koordinata')
 end
