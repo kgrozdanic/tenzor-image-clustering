@@ -1,5 +1,10 @@
 function [U, V] = GetUV(S, X)
-    n_iter = 90;
+    % normalize S
+    S = S - min(min(S));
+    S = S / max(max(S));
+    
+
+    n_iter = 50;
     % stopping criteria?
     [nrow, ncol, N] = size(X);
     D = sum(S, 2);
@@ -28,10 +33,22 @@ function [U, V] = GetUV(S, X)
         
         mistakes(iter) = abs(trace(U' * (Dv - Sv) * U) / trace(U' * Dv * U) * trace(V' * (Du - Su) * V) / trace(V' * Du * V));
     end 
-    
+        
     % [V, eigvalue_V] = SortByEig(V, eigvalue_V);
     % [U, eigvalue_U] = SortByEig(U, eigvalue_U);
     
-    plot(mistakes);
+    
+    
+    figure;
+    plot(mistakes, 'LineWidth', 1.2);
+    grid on;
+    
+    ax1 = gca;
+    set(ax1, 'Color',[0.95 0.95 0.95], 'gridcolor', [1 1 1], 'gridalpha', 1);
+    
+    
+    title('Funkcija cilja')
+    xlabel('Iteracija')
+    
     disp(mistakes(n_iter));
 end

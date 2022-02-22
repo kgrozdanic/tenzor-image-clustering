@@ -1,5 +1,5 @@
 %% X = h * w * N matrica slika. vraca simetricnu matricu slicnosti W. na dijagonali 0!
-function [W] = GetSimilarityMatrix_W(X, func)
+function [W] = GetSimilarityMatrixW(X, func)
     [h, w, N] = size(X);
     W = zeros(N);
         
