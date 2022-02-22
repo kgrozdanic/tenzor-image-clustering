@@ -23,6 +23,15 @@ function [X_train, y_train, X_test, y_test] = LoadZnamenke()
         % y_test{i} = dtest(:, i);
     end
     
+    idx = find(y_train <= 11);
+    y_train = y_train(idx);
+    X_train = X_train(:, :, idx);
+    
+    idx = find(y_test <= 11);
+    y_test = y_test(idx);
+    X_test = X_test(:, :, idx);
+    
+    
     [~, idx] = sort(y_train);
     y_train = y_train(idx);
     X_train = X_train(:, :, idx);

@@ -1,5 +1,5 @@
 function [U, V] = GetUV(S, X)
-    n_iter = 30;
+    n_iter = 90;
     % stopping criteria?
     [nrow, ncol, N] = size(X);
     D = sum(S, 2);
@@ -10,7 +10,7 @@ function [U, V] = GetUV(S, X)
     [i_idx, j_idx, ~] = find(S);
     idxs = {};
     for i = 1:N
-       idxs{i} = j_idx(find(i_idx == i)); 
+       idxs{i} = j_idx(find(i_idx == i)); %hmm, je li ovo upitna linija?
     end
    
     mistakes = zeros(1, n_iter);
