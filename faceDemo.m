@@ -1,6 +1,6 @@
 Startup
 
-k = 5;
+k = 8;
 [X_train, y_train, X_test, y_test] = loadExtended(k);
 
 
@@ -18,21 +18,30 @@ dataX = X_train;
 datay = y_train;
 
 fea = reshape(dataX, [], 32*32);
+
 options = [];
 options.Metric = 'Euclidean';
 options.NeighborMode = 'KNN';
-options.k = 10;
+options.k = 20;
 options.WeightMode = 'HeatKernel';
-options.t = 2;
+options.t = 30;
 W = constructW(fea,options);
 % S = GetNeighbourMatrixS(W, 20);
-figure(); imagesc(W); colormap(gray);
+figure(); imagesc(W); title('W');
 
 
 %NASTAVLJAM NASIM KODOM!
 [U, V] = GetUV(W, dataX);
-projection_dim = 5;
-xy = ApplyTensorImage(dataX, datay, U, V, projection_dim, projection_dim); idx = kmeans(xy, k); [Acc, ~ ,match] = AccMeasure(datay, idx)
+% projection_dim = 5;
+% xy = ApplyTensorImage(dataX, datay, U, V, projection_dim, projection_dim);
+PlotAccuracy(dataX, datay, U, V, 2, 10, k);
+
+% normalized cuts
+
+disp('____W____')
+ApplyNormCut(W, k, datay);
+
+% idx = kmeans(xy, k); [Acc, ~ ,match] = AccMeasure(datay, idx)
 
 % %njihovo!
 % [U, V, eigvalue_U, eigvalue_V, posIdx, Y] = TensorLGE(dataX, W);
@@ -41,3 +50,25 @@ xy = ApplyTensorImage(dataX, datay, U, V, projection_dim, projection_dim); idx =
 % [Acc, ~ ,match] = AccMeasure(datay, idx_external)
 
 
+
+% options = [];
+% options.Metric = 'Cosine';
+% % options.NeighborMode = 'KNN';
+% options.k = 20;
+% options.WeightMode = 'Cosine';
+% options.t = 2;
+% W = constructW(fea,options);
+% % S = GetNeighbourMatrixS(W, 20);
+% figure(); imagesc(W); title('W');
+% 
+% 
+% %NASTAVLJAM NASIM KODOM!
+% [U, V] = GetUV(W, dataX);
+% % projection_dim = 5;
+% % xy = ApplyTensorImage(dataX, datay, U, V, projection_dim, projection_dim);
+% PlotAccuracy(dataX, datay, U, V, 2, 10, k);
+% 
+% % normalized cuts
+% 
+% disp('____W____')
+% ApplyNormCut(W, k, datay);

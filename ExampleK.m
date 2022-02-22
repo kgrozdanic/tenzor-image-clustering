@@ -34,7 +34,7 @@ ApplyTensorImage(X_train, y_train, U, V, 1, 2);
 ApplyTensorImage(X_train, y_train, U, V, 2, 1);
 
 
-PlotAccuracy(X_train, y_train, U, V, 2, 14);
+PlotAccuracy(X_train, y_train, U, V, 2, 7);
 
 % normalized cuts
 

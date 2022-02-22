@@ -1,9 +1,9 @@
-function PlotAccuracy(X, y, U, V, start, stop)
+function PlotAccuracy(X, y, U, V, start, stop, k)
     acc = zeros(stop, 1);
     
     for N = start:stop
         xy = ApplyTensorImage(X, y, U, V, N, N); 
-        idx = kmeans(xy, 10); 
+        idx = kmeans(xy, k); 
         [Acc, ~, ~] = AccMeasure(y, idx);
         acc(N) = Acc;
     end
@@ -18,5 +18,5 @@ function PlotAccuracy(X, y, U, V, start, stop)
     
     
     xlabel('Dimenzija tenzorskog prostora')
-    ylabel('Toènost (%)')
+    ylabel('Tocnost (%)')
 end
